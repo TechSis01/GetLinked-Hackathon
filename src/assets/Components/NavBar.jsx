@@ -1,5 +1,6 @@
-import brandName from "../Images/brandName.png";
+import brandName from "../Images/brandname.png";
 import Button from "./Button";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 function NavBar() {

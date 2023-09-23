@@ -11,9 +11,9 @@ import Modal from "./Modal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import usePost from "../hooks/usePost";
+import useFetch from "../hooks/useFetch";
 function Registration() {
-    const {error,data,postRequest} = usePost()
+    const {error,data} = useFetch()
   const navigate = useNavigate();
   const [modalState, setModalState] = useState(true);
   const [registeredUser, setRegisteredUser] = useState({});
@@ -57,7 +57,7 @@ function Registration() {
     }),
     onSubmit: (values) => {
       setRegisteredUser(values)
-      postRequest("https://backend.getlinked.ai/hackathon/registration",registeredUser)
+      postRequest("/hackathon/registration",registeredUser)
   console.log(data)
       openModal()
     },
