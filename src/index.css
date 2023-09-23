@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  overflow-x: hidden;
+}
+html{
+  overflow-x: hidden;
+  font-size:62.5%;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  overflow: hidden;
+}
+.horizontal-line{
+  height: 2px;
+  width:100%;
+  background-color: #fff;
+  background-color: #fff;
+}
+.first-line{
+  width:50%;
+  background-color: #fff;
+}
+.third-line{
+  width:50%;
+ background-color: #fff; 
+ margin-left: 1rem;
+}
+.register-btn{
+  background-color: linear ;
+}
+.circle{
+  filter: blur(120px);
+}
+input[type="checkbox"]{
+  accent-color:#903AFF;
+}
+.reg-container {
+  position: relative;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(30, 30, 30, 0.6);
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+.modal {
+  border-radius: 5px;
+  margin:0 auto;
+}
+.purpleStar{
+  right:25%;
+  top:15%;
+}
+.whiteStar{
+  right:70%;
+  top:40%;
+}
+.bright-purple{
+  bottom:18%;
+  right:30%;
+}
+/* HERO SECTION */
+.big-whiteStar{
+  left:5%;
+}
+.purple-heroStar{
+ 
+ bottom:18%;
+ left:40%;
+}
+/* INTRODUCTION SECTION */
+.introduction-purple{
+  left:10%;
+}
+.introduction-purple-2{
+  top:30%;
+  right:10%;
+}
+/* RULES SECTION */
+.rulesStar1{
+  top:20%;
+  left:20%;
+}
+.rulesStar2{
+  left:50%;
+  top:60%;
+}
+/* ATTRIBUTE SECTION*/
+.attributeStar1{
+  top:15%;
+  left:10%
+}
+.attributeStar2{
+  top:45%;
+  left:25%
+}
+.attributeStar3{
+  top:75%;
+  left:40%
+}
+/* FAQ SECTION */
+.faq-Star1{
+  top:5%;
+  left:5%
+}
+.faq-Star2{
+  top:25%;
+  left:60%
+}
+.faq-Star3{
+  top:5%;
+  left:80%
+}
+.faq-Star4{
+  top:75%;
+  left:40%
+}
+.faq-Star5{
+  bottom:5%;
+  right:20%
+}
+/* TIMELINE SECTION  */
+.timelineStar1{
+  top:5%;
+  left:20%;
+}
+.timelineStar2{
+  bottom:60%;
+  left:85%;
+}
+.timelineStar3{
+  bottom:10%;
+  left:5%;
+}
+@media (max-width: 640px) {
+  .whiteStar{
+    right:80%;
+    top:40%;
+  }
+}
