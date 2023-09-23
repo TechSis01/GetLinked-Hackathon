@@ -11,17 +11,19 @@ import Modal from "./Modal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-// import useFetch from "../hooks/useFetch";
+import useFetch from "../hooks/useFetch";
+
 function Registration() {
-    // const {error,data} = useFetch()
+  const {post} = useFetch()
   const navigate = useNavigate();
-  const [modalState, setModalState] = useState(true);
+  const [modalState, setModalState] = useState(false);
   const [registeredUser, setRegisteredUser] = useState({});
   
   // OPEN MODAL
   function openModal() {
     setModalState(true);
   }
+
   // CLOSE MODAL
   function closeModal() {
     navigate("/");
@@ -29,36 +31,37 @@ function Registration() {
 
   const formik = useFormik({
     initialValues: {
-      email: "",
-      phoneNumber: "",
-      teamName: "",
-      projectTopic: "",
-      category:"",
-      groupSize:"",
-      privacyPolicyAccepted:null
+            email:"",
+            phone_number:"",
+            team_name: "",
+            group_size:0,
+            project_topic:"",
+            category:0,
+            privacy_poclicy_accepted:""
     },
     validationSchema: Yup.object({
-      teamName: Yup.string()
+        team_name: Yup.string()
         .max(15, "Must be 15 characters or less")
         .required("This field is required"),
       email: Yup.string()
         .email("invalid email address")
         .required("This field is required"),
-       phoneNumber : Yup.string()
+        phone_number : Yup.string()
         .required("This field is required"),
-       projectTopic : Yup.string()
+        project_topic : Yup.string()
         .required("This field is required"),
-       category : Yup.string()
+       category : Yup.number()
         .required("This field is required"),
-       groupSize : Yup.string()
+        group_size : Yup.number()
         .required("This field is required"),
-       privacyPolicyAccepted : Yup.string()
+        privacy_poclicy_accepted : Yup.string()
         .required("This field is required"),
     }),
     onSubmit: (values) => {
-      setRegisteredUser(values)
-    //   postRequest("/hackathon/registration",registeredUser)
-//   console.log(data)
+      values.category = parseInt(values.category);
+      values.group_size = parseInt(values.group_size);
+     let responseBody =  post(`/hackathon/registration`,values)
+    console.log(responseBody)
       openModal()
     },
   });
@@ -116,13 +119,13 @@ function Registration() {
                   type="text"
                   placeholder="Enter the name of your group"
                   id="TeamName"
-                  value={formik.values.teamName}
+                  value={formik.values.team_name}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  name="teamName"
+                  name="team_name"
                 ></input>
-                {formik.touched.teamName && formik.errors.teamName ? (
-                  <p className="text-red">{formik.errors.teamName}</p>
+                {formik.touched.team_name && formik.errors.team_name ? (
+                  <p className="text-red">{formik.errors.team_name}</p>
                 ) : null}
               </div>
               <div className="md:w-5/12 flex flex-col">
@@ -134,13 +137,13 @@ function Registration() {
                   type="text"
                   id="phone"
                   placeholder="Enter your phone number"
-                  value={formik.values.phoneNumber}
+                  value={formik.values.phone_number}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  name="phoneNumber"
+                  name="phone_number"
                 ></input>
-                 {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                  <p className="text-red">{formik.errors.phoneNumber}</p>
+                 {formik.touched.phone_number && formik.errors.phone_number ? (
+                  <p className="text-red">{formik.errors.phone_number}</p>
                 ) : null}
               </div>
             </div>
@@ -173,13 +176,13 @@ function Registration() {
                   type="text"
                   id="topic"
                   placeholder="What is your project topic"
-                  value={formik.values.projectTopic}
+                  value={formik.values.project_topic}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  name="projectTopic"
+                  name="project_topic"
                 ></input>
-                 {formik.touched.projectTopic && formik.errors.projectTopic ? (
-                  <p className="text-red">{formik.errors.projectTopic}</p>
+                 {formik.touched.project_topic && formik.errors.project_topic ? (
+                  <p className="text-red">{formik.errors.project_topic}</p>
                 ) : null}
               </div>
             </div>
@@ -190,47 +193,47 @@ function Registration() {
                   Category
                 </label>
                 <select
-                  value={formik.values.category}
+                  value={parseInt(formik.values.category)}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   name="category"
                   id="category"
                   className="bg-grey bg-opacity-25 p-4 rounded-md border border-white outline-none text-white text-smallTwo my-4 md:my-0"
                 >
-                  <option value="1" className="bg-grey">
+                  <option value={1} className="bg-grey">
                     1
                   </option>
-                  <option value="2" className="bg-grey">
+                  <option value={2} className="bg-grey">
                     2
                   </option>
-                  <option value="3" className="bg-grey">
+                  <option value={3} className="bg-grey">
                     3
                   </option>
-                  <option value="4" className="bg-grey">
+                  <option value={4} className="bg-grey">
                     4
                   </option>
-                  <option value="5" className="bg-grey">
+                  <option value={5} className="bg-grey">
                     5
                   </option>
-                  <option value="6" className="bg-grey">
+                  <option value={6} className="bg-grey">
                     6
                   </option>
-                  <option value="7" className="bg-grey">
+                  <option value={7} className="bg-grey">
                     7
                   </option>
-                  <option value="8" className="bg-grey">
+                  <option value={8} className="bg-grey">
                     8
                   </option>
-                  <option value="9" className="bg-grey">
+                  <option value={9} className="bg-grey">
                     9
                   </option>
-                  <option value="10" className="bg-grey">
+                  <option value={10} className="bg-grey">
                     10
                   </option>
-                  <option value="11" className="bg-grey">
+                  <option value={12} className="bg-grey">
                     11
                   </option>
-                  <option value="12" className="bg-grey">
+                  <option value={13} className="bg-grey">
                     12
                   </option>
                 </select>
@@ -244,31 +247,29 @@ function Registration() {
                   Group Size
                 </label>
                 <select
-                  value={formik.values.groupSize}
+                  value={formik.values.group_size}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  name="groupSize"
+                  name="group_size"
                   id="size"
                   className="bg-grey bg-opacity-25 p-4 rounded-md border border-white outline-none text-white text-smallTwo my-4 md:my-0"
                 >
-                  <option value="1" className="bg-grey">
+                  <option value= ""className="bg-grey">
                     1
                   </option>
-                  <option value="1-5" className="bg-grey">
-                    1-5
+                  <option value = "5" className="bg-grey">
+                    5
                   </option>
-                  <option value="6-10" className="bg-grey">
-                    6-10
+                  <option value= "10" className="bg-grey">
+                    10
                   </option>
-                  <option value="11-20" className="bg-grey">
-                    11-20
+                  <option value= "20"className="bg-grey">
+                    20
                   </option>
-                  <option value="20+" className="bg-grey">
-                    20+
-                  </option>
+               
                 </select>
-                {formik.touched.groupSize && formik.errors.groupSize ? (
-                  <p className="text-red">{formik.errors.groupSize}</p>
+                {formik.touched.group_size && formik.errors.group_size ? (
+                  <p className="text-red">{formik.errors.group_size}</p>
                 ) : null}
               </div>
             </div>
@@ -279,10 +280,10 @@ function Registration() {
             />
             <div className="flex w-full md:w-8/12 justify-between items-start md:items-center mt-6">
               <input
-                value={formik.values.privacyPolicyAccepted}
+                value={formik.values.privacy_poclicy_accepted}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                name="privacyPolicyAccepted"
+                name="privacy_poclicy_accepted"
                 type="checkbox"
                 className="checkbox text-dark-purple mt-2 md:mt-0"
               ></input>

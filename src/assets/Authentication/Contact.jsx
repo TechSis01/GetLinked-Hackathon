@@ -9,15 +9,20 @@ import {RiTwitterXFill} from "react-icons/ri"
 import {FaFacebookF} from "react-icons/fa"
 import {GrLinkedinOption} from "react-icons/gr"
 import {BsInstagram} from "react-icons/bs"
+import { useNavigate } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 function Contact() {
+  const {post} = useFetch()
+  const navigate = useNavigate()
   const formik = useFormik({
     initialValues: {
       email: "",
-      firstName: "",
+      phone_number:"",
+      first_name: "",
       message: "",
     },
     validationSchema: Yup.object({
-      firstName: Yup.string()
+      first_name: Yup.string()
         .max(15, "Must be 15 characters or less")
         .required("This field is required"),
       email: Yup.string()
@@ -25,9 +30,13 @@ function Contact() {
         .required("This field is required"),
        message : Yup.string()
         .required("This field is required"),
+       phone_number : Yup.string()
+       .min(11, "Must be 11 characters")
+        .required("This field is required"),
     }),
     onSubmit: (values) => {
-     console.log(values)
+      let responseBody = post("/hackathon/contact-form",values)
+      navigate("/")
     },
   });
 
@@ -75,15 +84,32 @@ function Contact() {
                 type="text"
                 placeholder="First Name"
                 id="TeamName"
-                name="firstName"
-                value={formik.values.firstName}
+                name="first_name"
+                value={formik.values.first_name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               ></input>
-                {formik.touched.firstName && formik.errors.firstName ? (
-                  <p className="text-red">{formik.errors.firstName}</p>
+                {formik.touched.first_name && formik.errors.first_name ? (
+                  <p className="text-red">{formik.errors.first_name}</p>
                 ) : null}
             </div>
+
+            <div className="w-full md:w-11/12 flex flex-col">
+              <input
+                className="bg-grey bg-opacity-25 p-4 rounded-md border border-white outline-none text-smallTwo my-4 md:my-0"
+                type="text"
+                placeholder="Phone Number"
+                id="TeamName"
+                name="phone_number"
+                value={formik.values.phone_number}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              ></input>
+                {formik.touched.phone_number && formik.errors.phone_number ? (
+                  <p className="text-red">{formik.errors.phone_number}</p>
+                ) : null}
+            </div>
+
             <div className="w-full md:w-11/12 flex flex-col mt-16 ">
               <input
                 className="bg-grey p-4  bg-opacity-25 rounded-md border border-white outline-none text-smallTwo my-4 md:my-0"
