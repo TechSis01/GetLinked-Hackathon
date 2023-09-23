@@ -1,6 +1,6 @@
 import Text from "../Components/Text"
 import SmallText from "../Components/SmallText"
-import brandName from "../Images/brandName.png"
+import brandName from "../Images/brandname.png"
 import {RiTwitterXFill} from "react-icons/ri"
 import {FaFacebookF} from "react-icons/fa"
 import {GrLinkedinOption} from "react-icons/gr"
