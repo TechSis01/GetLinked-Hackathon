@@ -34,6 +34,7 @@ function TimelineTexts() {
           </div>
         ))}
       </section>
+
       <section className="hidden lg:grid-cols-3 py-40 lg:grid relative">
       <img src={purpleStar} alt="" className="absolute timelineStar1"></img>
       <img src={whiteStar} alt="" className="absolute timelineStar2"></img>
@@ -41,13 +42,13 @@ function TimelineTexts() {
         <div className="hidden md:flex lg:flex-col md:justify-around">
           {timeline1.map((text) => (
             <>
-              <div>
-                <p className="font-bold text-bright-purple text-right">{text.header}</p>
-                <p className="text-white text-opacity-70 text-right ">
+              <div className={`mt-40`}>
+                <p className={`font-bold text-bright-purple text-right `}>{text.header}</p>
+                <p className={`text-white text-opacity-70 text-right ${text.id === "3" && ""}`}>
                   {text.information}
                 </p>
               </div>
-              <div className="text-bright-purple font-semibold text-right ">
+              <div className={`text-bright-purple font-semibold text-right ${text.id === "1" && "mt-10"}`}>
                 {text.date}
               </div>
             </>
@@ -62,24 +63,23 @@ function TimelineTexts() {
                 circleText={text.id}
                 blurStyle="w-10 text-white font-semibold bg-gradient-to-r from-dark-purple to-bright-purple text-center rounded-full"
               />
-
             </>
           ))}
         </div>
 
-        <div className="hidden md:flex md:flex-col">
+        <div className="hidden md:flex lg:flex-col md:flex-col">
           {timeline2.map((text) => (
-            <>
-              <div className={`text-bright-purple font-semibold ${text.class}`}>
+            <div>
+              <div className={`text-bright-purple font-semibold mt-52 ${text.class} `}>
                 {text.date}
               </div>
-              <div className="mt-auto">
-                <p className="font-bold text-bright-purple">{text.header}</p>
-                <p className="text-white text-opacity-70">
+              <div className={text.id === "2" && "mt-10"}>
+                <p className={`font-bold text-bright-purple ${text.id === "2" && "mt-32"}`}>{text.header}</p>
+                <p className={`text-white text-opacity-70 `}>
                   {text.information}
                 </p>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </section>

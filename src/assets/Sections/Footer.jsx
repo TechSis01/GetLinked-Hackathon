@@ -8,12 +8,20 @@ import {BsInstagram} from "react-icons/bs"
 import {BiSolidPhoneCall} from "react-icons/bi"
 import {HiLocationMarker} from "react-icons/hi"
 import BlurCircle from "../Components/BlurCircle"
+import brightPurple from "../Images/bright-purpleStar.png";
+import whiteStar from "../Images/big-white.png";
+import bigWhiteStar from "../Images/big-whiteStar.png";
+import greyStar from "../Images/whitish.png";
 function Footer() {
   return (
     <section className="bg-darkest pb-28 relative z-10">
+       
         <BlurCircle blurStyle="hidden md:block circle w-2/5 h-96 bg-dark-purple rounded-full absolute mb-56 -top-14 -left-96" />
-        
    <section className="grid grid-cols-1 gap-5 justify-items-center md:px-20 px-16 py-40 md:grid-cols-3 text-white relative z-10">
+   <img src={whiteStar} alt="star" className="absolute footer-white"></img>
+        <img src={brightPurple} alt="star" className="absolute footer-purple"></img>
+        <img src={greyStar} alt="star" className=" absolute footer-grey"></img>
+        <img src={whiteStar} alt="star" className=" absolute footerWhite"></img>
         <div className="flex flex-col justify-between w-full">
             <div>
                 <img src={brandName} alt="getLined"></img>

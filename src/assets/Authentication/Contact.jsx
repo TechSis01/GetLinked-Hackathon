@@ -35,7 +35,7 @@ function Contact() {
         .required("This field is required"),
     }),
     onSubmit: (values) => {
-      let responseBody = post("/hackathon/contact-form",values)
+      post("/hackathon/contact-form",values)
       navigate("/")
     },
   });
@@ -94,7 +94,7 @@ function Contact() {
                 ) : null}
             </div>
 
-            <div className="w-full md:w-11/12 flex flex-col">
+            <div className="w-full md:w-11/12 flex flex-col mt-16">
               <input
                 className="bg-grey bg-opacity-25 p-4 rounded-md border border-white outline-none text-smallTwo my-4 md:my-0"
                 type="text"

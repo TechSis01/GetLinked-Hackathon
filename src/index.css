@@ -141,6 +141,86 @@ input[type="checkbox"]{
   bottom:10%;
   left:5%;
 }
+
+/* PRIZES SECTION */
+.prizes-star1{
+  top:10%;
+  left:25%;
+}
+.prizes-star2{
+  top:50%;
+  right:5%;
+}
+.prizes-star3{
+  top:30%;
+  right:50%;
+}
+.prizes-star4{
+  bottom:15%;
+  right:18%;
+}
+.prizes-star5{
+  bottom:10%;
+  left:15%;
+}
+
+/* PARTNERS SECTION */
+.partner-star1{
+  top:30%;
+  left:15%;
+}
+.partner-star2{
+  right:40%;
+  top:40%;
+}
+.partner-star3{
+  right:45%;
+  top:85%;
+}
+
+/* PRIVACY SECTION */
+.bright-purple{
+ left:60%;
+ top:25%;
+}
+.greyStar{
+  left:40%;
+  top:10%;
+}
+.small-whiteStar{
+  left:90%;
+ top:25%;
+}
+.purpleStar{
+  left:5%;
+  bottom:5%;
+  z-index:40;
+}
+.bright-purple2{
+  right:40%;
+  top:60%;
+}
+.small-whiteStar2{
+  right:5%;
+  top:80%;
+}
+
+/* FOOTER */
+.footer-white{
+  right:5%;
+  top:80%;
+}
+.footer-purple{
+  bottom:10%;
+}
+.footer-grey{
+  right:40%;
+  top:30%;
+}
+.footerWhite{
+  left:2%;
+  top:50%;
+}
 @media (max-width: 640px) {
   .whiteStar{
     right:80%;
@@ -148,6 +228,22 @@ input[type="checkbox"]{
   }
 }
 
+/* QUESTION MARK */
+.question1{
+  top:10%;
+  right:45%;
+  z-index:50;
+}
+.question2{
+  top:5%;
+  right:35%;
+  z-index:50;
+}
+.question3{
+  right:25%;
+  top:10%;
+  z-index:50;
+}
 .nav-active{
   transform: translateX(-150px);
   transition: all 0.5s ease;

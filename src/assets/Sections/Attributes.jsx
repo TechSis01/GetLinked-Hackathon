@@ -8,15 +8,15 @@ import greyStar from "../Images/whitish.png"
 import purpleStar from "../Images/big-purpleStar.png"
 function Attributes() {
   return (
-    <section className="relative flex py-44 flex-col md:flex-row items-center justify-between md:px-20 px-16 border-b border-white border-opacity-10">
+    <section className="relative flex py-44 flex-col md:flex-col lg:flex-row items-center justify-between md:px-20 px-16 border-b border-white border-opacity-10">
       <img src={purpleStar} alt="star"  className="absolute attributeStar1"></img>
       <img src={greyStar} alt="star" className="absolute attributeStar2"></img>
       <img src={whiteStar} alt="star" className="absolute attributeStar3"></img>
-      <div className="md:w-5/12 relative z-10">
+      <div className="lg:w-5/12 relative z-10">
         <img src={picture} alt="man and woman"></img>
       </div>
       <BlurCircle blurStyle="circle w-2/6 h-96 md:h-1/4 sm:w-1/4 rounded-full bg-dark-purple absolute md:left-36 md:top-96 top-64 left-4"/>
-      <div className="md:w-6/12">
+      <div className="lg:w-6/12">
         <Text
           text="Judging Criteria"
           textStyle="font-bold text-center lg:text-left lg:text-sbmedium text-white"
@@ -35,7 +35,7 @@ function Attributes() {
             </p>
           </div>
         ))}
-        <div className="flex justify-center items-center md:block">
+        <div className="flex justify-center items-center lg:block">
           <Button
             buttonText="Read More"
             btnStyle=" mt-24 text-white bg-gradient-to-r from-brightest-purple via-bright-purple to-dark-purple py-6 px-20 rounded-md"

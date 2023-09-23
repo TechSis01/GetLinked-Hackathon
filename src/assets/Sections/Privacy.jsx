@@ -6,13 +6,35 @@ import Text from "../Components/Text";
 import SmallText from "../Components/SmallText";
 import Button from "../Components/Button";
 import BlurCircle from "../Components/BlurCircle";
+import brightPurple from "../Images/bright-purpleStar.png";
+import whiteStar from "../Images/big-white.png";
+import bigWhiteStar from "../Images/big-whiteStar.png";
+import greyStar from "../Images/whitish.png";
+import smallWhiteStar from "../Images/whitestar.png";
+import purpleStar from "../Images/purple-star.png";
 function Privacy() {
   return (
     <section className="overflow-x-hidden">
       <BlurCircle blurStyle="hidden circle md:block w-1/4 h-40 bg-dark-purple rounded-full absolute -right-28 " />
 
-      <section className="flex flex-col md:flex-row justify-around items-center relative md:px-20 px-16 py-12 overflow-x-hidden">
-        <div className="flex flex-col justify-around md:pt-28 items-around md:w-5/12 text-white relative z-10">
+      <section className="flex flex-col lg:flex-row justify-around items-center relative lg:px-20 px-16 py-12 overflow-x-hidden">
+        <img
+          src={brightPurple}
+          alt="star"
+          className="absolute bright-purple"
+        ></img>
+        <img
+          src={brightPurple}
+          alt="star"
+          className="absolute bright-purple2"
+        ></img>
+        <img src={whiteStar} alt="star" className="absolute"></img>
+        <img src={purpleStar} alt="star" className="absolute purpleStar"></img>
+        <img src={greyStar} alt="star" className="absolute greyStar"></img>
+        <img src={smallWhiteStar} alt="star" className="absolute small-whiteStar"></img>
+        <img src={smallWhiteStar} alt="star" className="absolute small-whiteStar2"></img>
+        <img src={greyStar} alt="star" className="absolute"></img>
+        <div className="flex flex-col justify-around md:pt-28 items-around lg:w-5/12 text-white relative z-10">
           <div>
             <Text
               text="Privacy Policy and "
@@ -32,7 +54,7 @@ function Privacy() {
           </div>
 
           <div className="border border-bright-purple rounded-md sm:p-28 p-10 w-full">
-      <BlurCircle blurStyle="circle md:hidden w-1/4 h-50 bg-dark-purple rounded-full absolute bottom-64" />
+            <BlurCircle blurStyle="circle md:hidden w-1/4 h-50 bg-dark-purple rounded-full absolute bottom-64" />
 
             <SmallText
               smallText="At getlinked tech Hackathon 1.0, we value your privacy
@@ -79,8 +101,8 @@ function Privacy() {
             </div>
           </div>
         </div>
-        <div className="md:w-6/12 mt-28 md:mt-28 relative overflow-hidden">
-          <div className=" hidden md:block absolute md:ml-28">
+        <div className="lg:w-6/12 mt-28 md:mt-28 relative overflow-hidden">
+          <div className=" hidden md:block absolute lg:ml-28">
             <img src={padlock} alt="padlock"></img>
           </div>
           <img src={padlock} alt="padlock" className="absolute md:hidden"></img>
