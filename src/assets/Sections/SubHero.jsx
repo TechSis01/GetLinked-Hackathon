@@ -4,7 +4,7 @@ import BlurCircle from "../Components/BlurCircle"
 function SubHero() {
   return (
     <>
-         <BlurCircle blurStyle=" circle bg-opacity-70 w-1/4 h-80 bg-dark-purple absolute md:left-56"/>
+         <BlurCircle blurStyle=" circle rounded-full bg-opacity-70 w-1/4 h-80 bg-dark-purple absolute md:left-56"/>
 
     <section className="text-center relative overflow-hidden z-10">
       <div>

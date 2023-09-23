@@ -35,7 +35,7 @@ function NavBar() {
           <div className="horizontal-line my-1 rounded-sm"></div>
           <div className="horizontal-line third-line rounded-sm "></div>
         </div>
-        <div className={`left-0 top-0 ${navBarState ? "translate-x-0 duration-700 ease-in-out md:translate-x-0 md:duration-0 md:ease-none" : "transform translate-x-full duration-700 ease-in-out md:translate-x-0 md:duration-0 md:ease-none"} fixed h-full px-24 py-72 flex flex-col z-20 justify-between md:h-auto flex  md:py-0 bg-primary-purple w-full md:static md:flex-row links text-white md:flex md:justify-around lg:items-center`}>
+        <div className={`left-0 top-0 ${navBarState ? "translate-x-0 duration-700 ease-in-out md:translate-x-0 md:duration-0 md:ease-none" : "transform translate-x-full duration-700 ease-in-out md:translate-x-0 md:duration-0 md:ease-none"} fixed h-full px-24 py-72 flex flex-col z-20 justify-between md:h-auto flex  md:py-0 bg-primary-purple md:bg-transparent w-full md:static md:flex-row links text-white md:flex md:justify-around lg:items-center`}>
           <div className="absolute top-20 right-20 border border-brightest-purple font-bold px-2 py-2 rounded-full md:hidden" onClick={toggleNavClose}>
           <AiOutlineClose />
           </div>
